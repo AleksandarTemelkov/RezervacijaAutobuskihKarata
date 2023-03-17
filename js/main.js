@@ -42,9 +42,9 @@ const validateForm = () => {
     else warning_seat.innerHTML = "";
     
     
-    alert("Forma je uspešno validirana.");
+    alert("Forma je uspešno popunjena.");
 
-    
+
     
     /*const output = `Korisnik ${fullName} je ocenio film ocenom ${score} i postavio komentar:`;
     document.querySelector("#output").innerHTML = output;

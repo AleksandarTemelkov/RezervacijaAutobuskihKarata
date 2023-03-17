@@ -1,0 +1,299 @@
+        /* ELEMENTS */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', cursive;
+    color: hsla(0, 0%, 25%, 1);
+}
+
+h1 {
+    font-size: 3.25rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.75rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 2.25rem;
+}
+
+h6 {
+    font-size: 2rem;
+}
+
+p, li, label {
+    font-size: 1.5rem;
+}
+
+
+
+        /* CLASSES AND IDS */  
+
+.warning {
+    color: hsla(0, 50%, 35%, 1);
+}
+
+
+    /* HEADING */
+
+#header_heading, #header_navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: hsla(220, 60%, 20%, 1);
+
+    /* hsla(205, 35%, 50%, 1) */
+    /* hsla(40, 85%, 60%, 1) */
+}
+
+#header_heading {
+    flex-direction: row;
+}
+
+#heading, #subheading, .navigation-item {
+    color: hsla(40, 85%, 60%, 1);
+}
+
+#brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+
+    /* DIVIDER (HEADING-NAVIGATION) */
+
+#divider_heading-navigation {
+    border: 2px solid hsla(0, 0%, 95%, 1);
+}
+
+
+    /* NAVIGATION */
+
+#navigation-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+}
+
+.navigation-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.navigation-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.25s;
+}
+.navigation-item:hover {
+    opacity: 0.75;
+}
+.navigation-item:active {
+    opacity: 1;
+}
+
+
+    /* CONTENT */
+
+#content {
+    background-color: hsla(205, 35%, 50%, 1);
+}
+
+#container_bus-reservations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    padding: 6rem 0rem;
+    margin: 0 12.5%;
+}
+
+
+    /* SECTIONS */
+
+#section_bus, #section_reservations-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+
+    /* BUS */
+
+#bus {
+    width: 300px;
+    background-color: hsla(0, 0%, 95%, 1);
+    border: 5px solid hsla(0, 0%, 95%, 1);
+    border-radius: 10px;
+}
+
+.bus-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.bus-seat, .bus-passage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    margin: 2px;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.bus-passage {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+
+.bus-seat {
+    background-color: hsla(0, 0%, 50%, 0.5);
+}
+.bus-seat:hover {
+    background-color: hsla(0, 0%, 50%, 0.75);
+    color: hsla(0, 0%, 25%, 1);
+}
+.bus-seat:active {
+    background-color: hsla(0, 0%, 50%, 1);
+    color: hsla(0, 0%, 5%, 1);
+}
+
+.bus-seat-available {
+    background-color: hsla(120, 50%, 35%, 0.5);
+}
+.bus-seat-available:hover {
+    background-color: hsla(120, 50%, 35%, 0.75);
+    color: hsla(0, 0%, 5%, 1);
+}
+.bus-seat-available:active {
+    background-color: hsla(120, 50%, 35%, 1);
+    color: hsla(40, 85%, 60%, 1);
+}
+
+.bus-seat-unavailable {
+    background-color: hsla(0, 50%, 35%, 0.5);
+}
+.bus-seat-unavailable:hover {
+    background-color: hsla(0, 50%, 35%, 0.75);
+    color: hsla(0, 0%, 5%, 1);
+}
+.bus-seat-unavailable:active {
+    background-color: hsla(0, 50%, 35%, 1);
+    color: hsla(40, 85%, 60%, 1);
+}
+
+    /* PATHWAY */
+
+.pathway {
+    opacity: 0.25;
+}
+
+.pathway_bottom-right {
+    background-image: url("../images/pathway/Pathway_BottomRight.png");
+}
+
+.pathway_horizontal {
+    background-image: url("../images/pathway/Pathway_Horizontal.png");
+}
+
+.pathway_vertical {
+    background-image: url("../images/pathway/Pathway_Vertical.png");
+}
+
+.pathway_vertical-right {
+    background-image: url("../images/pathway/Pathway_VerticalRight.png");
+}
+
+
+    /* RESERVATIONS LIST */
+
+.reservation-item {
+    color: hsla(0, 0%, 95%, 1);
+}
+
+
+    /* RESERVATION FORM */
+
+#section_reservations-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: hsla(220, 60%, 20%, 1);
+}
+
+#reservations-form {
+    padding: 2rem 12rem 2rem 6rem;
+    background-color: hsla(0, 0%, 95%, 1);
+    border: 5px solid hsla(0, 0%, 95%, 1);
+    border-radius: 10px;
+}
+
+
+
+
+        /* MEDIA QUERIES */
+        
+    /* MOBILES */
+
+@media only screen and (max-width: 768px) {
+    #header_heading, #navigation-list, #container_bus-reservations {
+        flex-direction: column;
+    }
+
+    #brand {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .navigation-list-item {
+        margin: 1rem 0;
+    }
+
+    #container_bus-reservations {
+        width: 100%;
+        padding: 2rem 0;
+        margin: 0;
+    }
+
+    #section_bus {
+        padding-bottom: 2rem;
+    }
+
+    #reservations-form {
+        padding: 1rem 6rem 1rem 1rem;
+    }
+}

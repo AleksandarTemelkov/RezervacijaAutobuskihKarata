@@ -1,3 +1,16 @@
+        // VARIABLES
+
+var seats_object = [];
+
+
+        // FUNCTIONS
+
+    // Population of Form Field: Seat
+const populateFormField_Seat = (i) => {
+    document.querySelector("#seat").value = i;
+}
+
+    // Form Validation
 const validateForm = () => {
     const fullName = document.forms["reservations-form"]["fullName"].value;
     const email = document.forms["reservations-form"]["email"].value;
@@ -42,11 +55,27 @@ const validateForm = () => {
     else warning_seat.innerHTML = "";
     
     
-    alert("Forma je uspešno popunjena.");
+    info_submit.innerHTML = "Sedište je uspešno dodatnu na listu potvrde.";
 
+    var seat_object = [fullName, email, seat];
+    seats_object.push(seat_object);
+    document.querySelector(`#bus-seat-${seat}`).classList.remove("bus-seat-available");
+    document.querySelector(`#bus-seat-${seat}`).classList.add("bus-seat-pending");
 
+    return seats_object();
     
     /*const output = `Korisnik ${fullName} je ocenio film ocenom ${score} i postavio komentar:`;
     document.querySelector("#output").innerHTML = output;
     document.querySelector("#output_comment").innerHTML = `\"${comment}\"`;*/
+}
+
+const main = async (seats_object) => {
+    const res = await fetch("http://localhost:8080/loadSeats", {
+        method: "POST",
+        body: seats_object
+    });
+
+    var seats = await res.json();
+
+    console.log(seats);
 }

@@ -7,6 +7,10 @@
     color: hsla(0, 0%, 25%, 1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 h1 {
     font-size: 3.25rem;
 }
@@ -35,12 +39,40 @@ p, li, label {
     font-size: 1.5rem;
 }
 
+label {
+    padding: 2px;
+    margin: 5px;
+}
+
+input {
+    padding: 2px;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: 0.25s;
+}
+
+input:hover, input:focus {
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: hsla(220, 60%, 20%, 1);
+    color: hsla(0, 0%, 95%, 1);
+}
+::placeholder {
+    color: hsla(0, 0%, 100%, 1);
+}
+
 
 
         /* CLASSES AND IDS */  
 
+.info {
+    color: hsla(220, 60%, 20%, 1);
+    font-size: 1rem;
+}
 .warning {
     color: hsla(0, 50%, 35%, 1);
+    font-size: 1rem;
 }
 
 
@@ -201,6 +233,16 @@ p, li, label {
     color: hsla(40, 85%, 60%, 1);
 }
 
+.bus-seat-pending {
+    background-color: hsla(40, 85%, 60%, 0.5);
+}
+.bus-seat-pending:hover {
+    background-color: hsla(40, 85%, 60%, 0.75);
+}
+.bus-seat-pending:active {
+    background-color: hsla(40, 85%, 60%, 1);
+}
+
 .bus-seat-unavailable {
     background-color: hsla(0, 50%, 35%, 0.5);
 }
@@ -250,24 +292,62 @@ p, li, label {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    padding: 2rem;
+    width: 34%;
+    padding: 2rem 33%;
     background-color: hsla(220, 60%, 20%, 1);
 }
 
 #reservations-form {
-    padding: 2rem 12rem 2rem 6rem;
-    background-color: hsla(0, 0%, 95%, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
     border: 5px solid hsla(0, 0%, 95%, 1);
     border-radius: 10px;
+    background-color: hsla(0, 0%, 95%, 1);
 }
 
+#fullName {
+    width: 300px;
+    height: 20px;
+}
+
+#email {
+    width: 300px;
+    height: 20px;
+}
+
+#seat {
+    width: 20px;
+    height: 20px;
+}
+
+#submit {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: hsla(220, 60%, 20%, 1);
+    border: 1px solid hsla(220, 60%, 20%, 1);
+}
+#submit:hover {
+    background-color: hsla(220, 60%, 20%, 1);
+    color: hsla(0, 0%, 100%, 0.5);
+}
+#submit:active {
+    background-color: hsla(220, 60%, 20%, 1);
+    color: hsla(0, 0%, 100%, 1);
+}
 
 
 
         /* MEDIA QUERIES */
         
     /* MOBILES */
+    
+@media only screen and (max-width: 992px) {#fullName, #email {
+        width: 100%;
+    }
+}
 
 @media only screen and (max-width: 768px) {
     #header_heading, #navigation-list, #container_bus-reservations {
@@ -294,6 +374,6 @@ p, li, label {
     }
 
     #reservations-form {
-        padding: 1rem 6rem 1rem 1rem;
+        padding: 2rem;
     }
 }

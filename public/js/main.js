@@ -69,7 +69,31 @@ const validateForm = () => {
     document.querySelector("#output_comment").innerHTML = `\"${comment}\"`;*/
 }
 
-const main = async (seats_object) => {
+const form = document.querySelector('reservations-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  
+  const formData = new FormData(form);
+  const jsonObject = {};
+
+  for (const [key, value] of formData.entries()) {
+    jsonObject[key] = value;
+  }
+
+  fetch('https://localhost:8080/loadSeats', {
+    method: 'POST',
+    body: JSON.stringify(jsonObject),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+});
+
+/*const main = async (seats_object) => {
     const res = await fetch("http://localhost:8080/loadSeats", {
         method: "POST",
         body: seats_object
@@ -78,4 +102,4 @@ const main = async (seats_object) => {
     var seats = await res.json();
 
     console.log(seats);
-}
+}*/

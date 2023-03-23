@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.post("/loadSeats", (req, res) => {
+/*app.post("/loadSeats", (req, res) => {
     if (!fs.existsSync(pathSeats)) fs.mkdirSync(pathSeats);
 
     // var array_seats = fs.readdirSync(pathSeats);
@@ -49,7 +49,7 @@ app.post("/loadSeats", (req, res) => {
         fs.writeFile("public/seats/seats.json", JSON.stringify(seats, null, "\t"), (result, err) => { if(err) console.log(err); });
         return res.json(seats);
     }
-});
+});*/
 
 
 module.exports = app;

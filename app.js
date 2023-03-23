@@ -45,6 +45,8 @@ app.post("/loadSeats", (req, res) => {
             seats.push(seat);
         }
 
+        console.log(seats);
+
         // console.log(JSON.stringify(seats, null, "\t"));
         fs.writeFile("public/seats/seats.json", JSON.stringify(seats, null, "\t"), (result, err) => { if(err) console.log(err); });
         return res.json(seats);

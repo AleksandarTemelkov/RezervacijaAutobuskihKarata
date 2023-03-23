@@ -23,6 +23,19 @@ const validateForm = () => {
     const fullName_pattern = /(^[A-Za-z]{2})([ ]{0,1})([A-Za-z]{2})?([ ]{0,1})?([A-Za-z]{2})?([ ]{0,1})?([A-Za-z]{2})/;
     const email_pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     const seat_pattern = /^[0-9]/;
+
+
+    var seat_reservations_list = document.querySelector("#seat-reservations-list");
+    const info_submit = document.querySelector("#info_submit");
+
+
+    for (var i = 0; i < seats_object.length; i++) {
+        if (seat == seats_object[i].seat) {
+            info_submit.innerHTML = "Sedište je na listi za potvrdu rezervacije.";
+            info_submit.style.color = "hsla(0, 50%, 35%, 1)";
+            return false;
+        }
+    }
     
 
     if (fullName == '' || fullName == null) {
@@ -53,16 +66,23 @@ const validateForm = () => {
         return false;
     }
     else warning_seat.innerHTML = "";
+
     
-    
+    info_submit.style.color = "hsla(220, 60%, 20%, 1)";
     info_submit.innerHTML = "Sedište je uspešno dodatnu na listu potvrde.";
 
-    var seat_object = [fullName, email, seat];
+    var seat_object = {fullName: `${fullName}`, email: `${email}`, seat: `${seat}`};
     seats_object.push(seat_object);
     document.querySelector(`#bus-seat-${seat}`).classList.remove("bus-seat-available");
     document.querySelector(`#bus-seat-${seat}`).classList.add("bus-seat-pending");
+    const seat_list_item = document.createElement("li");
+    seat_list_item.classList.add("seat-reservations-list-item");
+    seat_list_item.innerText = `• ${fullName} — ${email} — ${seat}`;
+    seat_reservations_list.appendChild(seat_list_item);
 
-    return seats_object();
+
+    console.log(seats_object);
+    return seats_object;
     
     /*const output = `Korisnik ${fullName} je ocenio film ocenom ${score} i postavio komentar:`;
     document.querySelector("#output").innerHTML = output;
@@ -71,7 +91,7 @@ const validateForm = () => {
 
 const main = async (seats_object) => {
     const res = await fetch("http://localhost:8080/loadSeats", {
-        method: "POST",
+        method: 'POST',
         body: seats_object
     });
 

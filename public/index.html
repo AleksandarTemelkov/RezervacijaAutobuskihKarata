@@ -152,11 +152,23 @@
                     </div>
                 </section>
 
-                <section id="section_bus-reservations-list">
-                    <div id="container_bus-reservations-list">
-                        <ul id="reservations-list">
-                            <li class="reservation-item">TEST</li>
-                        </ul>
+                <section id="section_seat-reservations-list">
+                    <div id="container_seat-reservations-list">
+                        <div id="seat-reservations-list_header">
+                            <h6 id="seat-reservations-list_heading">Rezervacije na Čekanju</h6>
+                        </div>
+                        <div id="seat-reservations-list_content">
+                            <ul id="seat-reservations-list"></ul>
+                        </div>
+                        <div id="seat-reservations-list_footer">
+                            <div id="seat-reservation-list_total_container">
+                                <p id="seat-reservation-list_total">Total:</p>
+                            </div>
+                            <div id="seat-reservation-list_buttons_container">
+                                <button id="seat-reservation-list-button confirm">Potvrdi</button>
+                                <button id="seat-reservation-list-button cancel">Poništi</button>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </content>
@@ -183,7 +195,7 @@
                         </div>
     
                         <div id="container-submit">
-                            <input type="button" id="submit" value="Pošalji" onclick="main(validateForm)">
+                            <input type="button" id="submit" value="Pošalji" onclick="validateForm()">
                             <label for="submit" id="info_submit" class="info"></label>
                         </div>
                         <!-- Funkcija validateForm() je planirano da interaktuje sa Node.js-om pomoću FETCH API-a, ali to implementiramo kasnije. -->

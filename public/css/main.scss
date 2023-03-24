@@ -548,7 +548,7 @@ i {
     background-color: darkgray;
 }
 
-#modal-confirm_buttons_container {
+#modal-confirm_buttons_container, #modal-cancel_buttons_container {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

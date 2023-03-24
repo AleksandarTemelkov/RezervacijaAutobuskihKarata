@@ -2,12 +2,13 @@ const path = require("path");
 const fs = require("fs");
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 const pathSeats = path.join(__dirname, "/public/seats");
 
 
 app.use(express.static("public"));
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.get("/", (req, res) => {
@@ -29,6 +30,8 @@ app.get("/", (req, res) => {
 app.post("/loadSeats", (req, res) => {
     if (!fs.existsSync(pathSeats)) fs.mkdirSync(pathSeats);
 
+    console.log(req.body);
+
     // var array_seats = fs.readdirSync(pathSeats);
     var array_seats = req.body;
     var seats = [];
@@ -36,11 +39,11 @@ app.post("/loadSeats", (req, res) => {
     
     if (array_seats.length == 0) return res.json({ status: "404", message: `• Directory is empty.` });
     else {
-        for (var i = 0; i < array_seats.length; i++) {
-            var seat = {
-                fullName: req.body[i][0],
-                email: req.body[i][1],
-                seat: req.body[i][2]
+        for (var key in req.body) {
+            var seat;
+            if (req.body.hasOwnProperty(key)) {
+                seat = req.body[key];
+                console.log(item);
             }
             seats.push(seat);
         }

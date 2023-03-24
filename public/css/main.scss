@@ -1,0 +1,616 @@
+$pure-black: hsla(0, 0%, 0%, 1);
+$black: hsla(0, 0%, 5%, 1);
+$black_0-75: hsla(0, 0%, 5%, 0.75);
+$black_0-5: hsla(0, 0%, 5%, 0.5);
+$dark-gray: hsla(0, 0%, 25%, 1);
+$gray: hsla(0, 0%, 50%, 1);
+$gray_0-75: hsla(0, 0%, 50%, 0.75);
+$gray_0-5: hsla(0, 0%, 50%, 0.5);
+$white: hsla(0, 0%, 95%, 1);
+$pure-white: hsla(0, 0%, 100%, 1);
+$primary: hsla(220, 60%, 20%, 1);
+$secondary: hsla(205, 35%, 50%, 1);
+$accent: hsla(40, 85%, 60%, 1);
+$red: hsla(0, 75%, 40%, 1);
+$red_0-75: hsla(0, 75%, 40%, 0.75); 
+$red_0-5: hsla(0, 75%, 40%, 0.5);
+$yellow: hsl(60, 75%, 50%);
+$yellow_0-75: hsla(60, 75%, 50%, 0.75);
+$yellow_0-5: hsla(60, 75%, 50%, 0.5);
+$green: hsla(120, 50%, 40%, 1);
+$green_0-75: hsla(120, 50%, 40%, 0.75);
+$green_0-5: hsla(120, 50%, 40%, 0.5);
+
+
+        /* ELEMENTS */
+
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+    color: hsla(0, 0%, 25%, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button, div, h1, h2, h3, h4, h5, h6, label, li, p, input {
+    font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+    font-size: 3.25rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.75rem;
+}
+
+h4 {
+    font-size: 2.5rem;
+}
+
+h5 {
+    font-size: 2.25rem;
+}
+
+h6 {
+    font-size: 2rem;
+}
+
+p, li, label {
+    font-size: 1.5rem;
+}
+
+li {
+    font-size: 1rem;
+}
+
+label {
+    padding: 2px;
+    margin: 5px;
+}
+
+input {
+    padding: 2px;
+    border-width: 0px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: 0.25s;
+}
+
+input:hover, input:focus {
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: $primary;
+    color: $white;
+}
+::placeholder {
+    color: $pure-white;
+}
+
+label, input, button {
+    font-weight: bold;
+}
+
+
+
+            /* CLASSES AND IDS */  
+
+.info {
+    color: $primary;
+    font-size: 1rem;
+}
+.warning {
+    color: $red;
+    font-size: 1rem;
+}
+
+#divider {
+    display: flex;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+}
+
+
+    /* HEADING */
+
+#header_heading, #header_navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: $primary;
+
+    /* hsla(205, 35%, 50%, 1) */
+    /* hsla(40, 85%, 60%, 1) */
+}
+
+#header_heading {
+    flex-direction: row;
+}
+
+#heading, #subheading, .navigation-item {
+    color: $accent;
+}
+
+#heading {
+    margin-right: 2rem;
+}
+
+#brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#brand-icon {
+    margin-right: 1rem;
+    font-size: 3rem;
+    color: $accent;
+    opacity: 1;
+}
+
+
+    /* NAVIGATION */
+
+#navigation-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    list-style-type: none;
+}
+
+.navigation-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.navigation-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    opacity: 0.5;
+    transition: 0.25s;
+}
+.navigation-item:hover {
+    opacity: 0.75;
+}
+.navigation-item:active {
+    opacity: 1;
+}
+
+.navigation-item:after {
+    content: "";
+    position: absolute;
+    background-color: $accent;
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    transition: 0.25s;
+}
+.navigation-item:hover:after {
+    width: 100%;
+}
+
+
+        /* CONTENT */
+
+#content {
+    background-color: $secondary;
+}
+
+
+        /* SECTIONS */
+
+#section_bus, #section_seat-reservations-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+
+        /* BUS */
+
+#container_bus-reservations {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
+    padding: 6rem 0rem;
+    margin: 0 12.5%;
+}
+
+#bus {
+    width: 300px;
+    background-color: $white;
+    border: 5px solid $white;
+    border-radius: 10px;
+}
+
+.bus-row {
+    display: flex;
+    flex-direction: row;
+}
+
+    /* BUS SEAT */
+
+.bus-seat, .bus-passage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    margin: 2px;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.bus-passage {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+}
+
+.bus-seat {
+    background-color: $gray_0-5;
+    a {
+        text-decoration: none;
+    }
+}
+.bus-seat:hover {
+    background-color: $gray_0-75;
+    color: hsla(0, 0%, 25%, 1);
+}
+.bus-seat:active {
+    background-color: $gray;
+    color: hsla(0, 0%, 5%, 1);
+}
+
+.bus-seat-available {
+    background-color: $green_0-5;
+}
+.bus-seat-available:hover {
+    background-color: $green_0-75;
+    color: hsla(0, 0%, 5%, 1);
+}
+.bus-seat-available:active {
+    background-color: $green;
+    color: $white;
+}
+
+.bus-seat-pending {
+    background-color: $yellow_0-5;
+}
+.bus-seat-pending:hover {
+    background-color: $yellow_0-75;
+    color: hsla(0, 0%, 5%, 1);
+}
+.bus-seat-pending:active {
+    background-color: $yellow;
+    color: hsla(0, 0%, 5%, 1);
+}
+
+.bus-seat-unavailable {
+    background-color: $red_0-5;
+}
+.bus-seat-unavailable:hover {
+    background-color: $red_0-75;
+    color: hsla(0, 0%, 5%, 1);
+}
+.bus-seat-unavailable:active {
+    background-color: $red;
+    color: $white;
+}
+
+    /* PATHWAY */
+
+.pathway {
+    opacity: 0.25;
+}
+
+.pathway_bottom-right {
+    background-image: url("../images/pathway/Pathway_BottomRight.png");
+}
+
+.pathway_horizontal {
+    background-image: url("../images/pathway/Pathway_Horizontal.png");
+}
+
+.pathway_vertical {
+    background-image: url("../images/pathway/Pathway_Vertical.png");
+}
+
+.pathway_vertical-right {
+    background-image: url("../images/pathway/Pathway_VerticalRight.png");
+}
+
+
+        /* RESERVATIONS LIST */
+
+#container_seat-reservations-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 840px;
+    border: 5px solid $white;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#seat-reservations-list_header, #seat-reservations-list_content, #seat-reservations-list_footer {
+    width: 270px;
+}
+
+#seat-reservations-list_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    padding: 1rem;
+    background-color: $white;
+    text-align: center;
+}
+
+#seat-reservations-list_heading {
+    color: $black;
+}
+
+#seat-reservations-list_content {
+    height: 70%;
+    padding: 1rem;
+    background-color: $gray_0-5;
+
+    overflow-x: none;
+    overflow-y: scroll;
+}
+
+.seat-reservations-list-item {
+    font-weight: bold;
+    color: $black;
+    list-style-type: none;
+    padding-bottom: 10px;
+    border-bottom: 2px solid $black_0-5;
+}
+
+#seat-reservations-list_footer {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    padding: 1rem;
+    background-color: $white;
+}
+
+#seat-reservation-list_total {
+    padding-bottom: 40px;
+    color: $black;
+}
+
+#seat-reservation-list_buttons_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.seat-reservation-list-button, .modal-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    transition: 0.25s;
+}
+
+#confirm-button, #modal-confirm_confirm-button, #modal-cancel_confirm-button {
+    color: $green_0-5;
+    border: 1px solid $green_0-5;
+}
+#confirm-button:hover, #modal-confirm_confirm-button:hover, #modal-cancel_confirm-button:hover {
+    color: $green_0-75;
+    border: 1px solid $green_0-75;
+}
+#confirm-button:active, #modal-confirm_confirm-button:active, #modal-cancel_confirm-button:active {
+    color: $green;
+    border: 1px solid $green;
+}
+
+#cancel-button, #modal-confirm_cancel-button, #modal-cancel_cancel-button {
+    color: $red_0-5;
+    border: 1px solid $red_0-5;
+}
+#cancel-button:hover, #modal-confirm_cancel-button:hover, #modal-cancel_cancel-button:hover {
+    color: $red_0-75;
+    border: 1px solid $red_0-75;
+}
+#cancel-button:active, #modal-confirm_cancel-button:active, #modal-cancel_cancel-button:active {
+    color: $red;
+    border: 1px solid $red;
+}
+
+
+
+
+    /* RESERVATION FORM */
+
+#section_reservations-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 34%;
+    padding: 2rem 33%;
+    background-color: $primary;
+}
+
+#reservations-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
+    border: 5px solid $white;
+    border-radius: 10px;
+    background-color: $white;
+}
+
+#fullName {
+    width: 300px;
+    height: 20px;
+}
+
+#email {
+    width: 300px;
+    height: 20px;
+}
+
+#seat {
+    width: 20px;
+    height: 20px;
+}
+
+#submit {
+    padding: 10px 20px;
+    background-color: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+}
+#submit:hover {
+    background-color: $primary;
+    color: hsla(0, 0%, 100%, 0.5);
+}
+#submit:active {
+    background-color: $primary;
+    color: $pure-white;
+}
+
+i {
+    opacity: 1;
+}
+
+
+    /* MODALS */
+
+#modal-confirm_container, #modal-cancel_container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(0, 0%, 0%, 0.5);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+#modal-confirm_content, #modal-cancel_content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+
+#modal-confirm_close-button, #modal-cancel_close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+#modal-confirm_close-button:hover, #modal-cancel_close-button {
+    background-color: darkgray;
+}
+
+#modal-confirm_buttons_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.show-modal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: scale(1.0) !important;
+}
+
+
+
+        /* MEDIA QUERIES */
+        
+    /* MOBILES */
+
+@media only screen and (max-width: 1200px) {
+    #container_bus-reservations {
+        width: 90%;
+        margin: 0 5%;
+    }
+}
+    
+@media only screen and (max-width: 992px) {
+    #fullName, #email {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #header_heading, #navigation-list, #container_bus-reservations {
+        flex-direction: column;
+    }
+
+    #brand {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .navigation-list-item {
+        margin: 1rem 0;
+    }
+
+    #container_bus-reservations {
+        width: 100%;
+        padding: 2rem 0;
+        margin: 0;
+    }
+
+    #section_bus {
+        padding-bottom: 2rem;
+    }
+    
+    #section_reservations-form {
+        width: 80%;
+        padding: 2rem 10%;
+    }
+
+    #reservations-form {
+        padding: 1rem;
+    }
+}

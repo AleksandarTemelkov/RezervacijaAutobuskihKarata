@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   /* box-sizing: border-box; */
-  color: hsl(0, 0%, 25%);
 }
 
 html {
@@ -233,6 +232,9 @@ label, input, button {
   margin: 2px;
   font-weight: bold;
   transition: 0.25s;
+}
+.bus-seat a {
+  color: hsla(0, 0%, 25%, 1);
 }
 
 .bus-passage {
@@ -534,6 +536,43 @@ i {
   transform: scale(1) !important;
 }
 
+/* FOOTER */
+#footer_container {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+width: calc(100% - 2rem);
+height: 2rem;
+padding: 1rem;
+background-color: hsla(220, 60%, 20%, 1);
+}
+
+#footer-buttons_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%;
+  gap: 1rem;
+}
+
+#footer-copyright, .socialMedia-icons {
+  color: hsla(0, 0%, 95%, 1) !important;
+}
+
+.socialMedia-icons {
+  font-size: 2rem;
+  opacity: 0.5;
+  transition: 0.25s;
+}
+.socialMedia-icons:hover {
+  opacity: 0.75;
+}
+.socialMedia-icons:active {
+  opacity: 1;
+}
+
 /* MEDIA QUERIES */
 /* MOBILES */
 @media only screen and (max-width: 1200px) {
@@ -572,5 +611,14 @@ i {
   }
   #reservations-form {
     padding: 1rem;
+  }
+  #footer_container {
+    flex-direction: column;
+    padding-bottom: 3rem;
+  }
+  #footer-buttons_container {
+    padding-top: 1rem;
+    width: 80%;
+    margin: 0 10%;
   }
 }/*# sourceMappingURL=main.css.map */

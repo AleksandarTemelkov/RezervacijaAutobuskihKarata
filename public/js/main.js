@@ -33,7 +33,7 @@ const validateForm = () => {
 
 
     for (var i = 0; i < seats_object.length; i++) {
-        if (seat == seats_object[i].seat) {
+        if (value_seat == seats_object[i].seat) {
             info_submit.innerHTML = "Sedište je uveliko na listi rezervacija na čekanju.";
             info_submit.style.color = "hsla(0, 50%, 35%, 1)";
             return false;

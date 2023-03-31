@@ -3,7 +3,7 @@ showSlides();
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
-  }
+}
 
 function showSlides() {
   let i;

@@ -4,10 +4,11 @@
 }
 
 body{
-  background-color: #5387AC;
+  background-color: hsl(205, 35%, 50%);
 }
 
 .container {
+  padding: 160px 0;
   text-align: center;
   height: 70%;
 }
@@ -45,6 +46,7 @@ body{
   font-weight: bold;
   font-size: 16px;
   text-transform: uppercase;
+  color: hsl(220, 60%, 20%);
 }
 
 .desig {
@@ -75,6 +77,21 @@ body{
 
 .social-links a i {
   color: #444;
+}
+
+.desig, .about, i {
+  color: hsl(220, 60%, 20%);
+  visibility: hidden;
+}
+
+.teams:hover .desig, 
+.teams:hover .about, 
+.teams:hover i {
+  visibility: visible;
+}
+
+#profile-picture {
+  border-radius: 1rem;
 }
 
 @media screen and (max-width: 600px) {

@@ -281,7 +281,6 @@ body{
    cursor: pointer;
 }
 .card:hover{
-   border: 2px solid hsl(40, 85%, 60%);
    background-color: #80aecf;
    border-radius: 10px;
 }
@@ -312,6 +311,10 @@ body{
 .button:hover{
    background-color: hsl(40, 85%, 60%);
    transition: 0.4s ease;
+}
+
+#footer{
+  background-color: #142952;
 }
 
 @media screen and (max-width:940px ) {
